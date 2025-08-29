@@ -1,9 +1,18 @@
-#program that draws two random combinations of numbers for a combination lock
 import random
 
-code3 = "".join(str(random.randint(0, 9)) for _ in range(3))
+N = int(input("Enter the number of random points: "))
 
-code4 = "".join(str(random.randint(1, 6)) for _ in range(4))
+inside_circle = 0
+i = 0
 
-print(f"3-digit code: {code3}")
-print(f"4-digit code: {code4}")
+while i < N:
+    x = random.uniform(-1, 1)
+    y = random.uniform(-1, 1)
+
+    if x * x + y * y <= 1:
+        inside_circle += 1
+    i += 1
+
+pi_approx = 4 * inside_circle / N
+
+print(f"Approximation of pi: {pi_approx:.4f}")
