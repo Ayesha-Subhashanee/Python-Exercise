@@ -1,27 +1,14 @@
-nums = [10, 20, 30, 40, 50]
-names =["Viivi","Ahmed","Pekka","olga","Mary","Radin"]
-print(nums[0])
-print(nums[4])
-print(nums[-1])
-print(names[2])
-print(names[-3])
+class Car:
+    def __init__(self, plate_number, colour):
+        self.plate_number = plate_number
+        self.colour = colour
 
-print(len(nums))
-print(len(names))
-print("Ahmed" in names)
-print("Sara" in names)
+class PaintShop:
+    def paint(self, car, colour):
+        car.colour = colour
 
-
-
-print(nums[1:3])#without 3rd position
-print(nums[:2])#without 2nd position
-print(nums[2:])#with 2nd position
-print(names[0:4])#without 4th position
-print(names[::4])
-print(names[4::])
-
-nums[2] = 300; print(nums)
-names.append("Teppo"); print(names)
-names.remove("Pekka"); print(names)
-names.insert(1, "Matti"); print(names)
-nums.sort(); print(nums)
+paint_shop = PaintShop()
+car = Car("ABC-123", "blue")
+print("The car is " + car.colour)
+paint_shop.paint(car, "red")
+print("The car is now " + car.colour)
